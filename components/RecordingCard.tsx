@@ -44,13 +44,20 @@ export default function RecordingCard({ recording }: { recording: RecordingMeta 
           {hasDownloads ? (
             <div className="mt-3 flex flex-wrap gap-2">
               {audioUrl && (
+                // <a
+                //   href={`/api/download?url=${encodeURIComponent(audioUrl)}&format=mp3&filename=${encodeURIComponent(formatFilename("mp3"))}`}
+                //   className="inline-flex items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 transition-colors"
+                //   download
+                // >
+                //   ⬇ Download Audio
+                // </a>
                 <a
-                  href={`/api/download?url=${encodeURIComponent(audioUrl)}&format=mp3&filename=${encodeURIComponent(formatFilename("mp3"))}`}
-                  className="inline-flex items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 transition-colors"
-                  download
-                >
-                  ⬇ Download Audio
-                </a>
+  href={`/api/download?url=${encodeURIComponent(audioUrl)}&filename=${encodeURIComponent(formatFilename("audio"))}`}
+  className="inline-flex items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 transition-colors"
+  download
+>
+  ⬇ Download Audio
+</a>
               )}
               {/* {videoUrl && (
                 <a
